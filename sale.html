@@ -1,0 +1,197 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfumery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/filter.css">
+    <link rel="stylesheet" href="./css/bag.css">
+</head>
+<body>
+  <header>
+      <div class="header-nav">
+          <nav class="navbar navbar-expand-lg navbar-dark w-100">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">PERFUMERY</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html" id="Main">Главная</a>
+                  </li>
+                  <li class="nav-item">
+                    <button  class="dif-link nav-link" id="Basket"  onclick="showPopup()">Корзина</button>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="menu.html" id="Menu">Меню</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="new.html">Новинки</a></li>
+                      <li><a class="dropdown-item" href="sale.html">Скидки</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="menu.html">Меню</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search by the words">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div id="language-buttons">
+                  <button onclick="changeLanguage('en')">English</button>
+                  <button onclick="changeLanguage('ru')">Русский</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+      </div>
+      <div id="carouselExampleDark" class="carousel carousel-dark slide w-100" data-bs-ride="carousel" >
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="./img/header-bg.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Метка первого слайда</h5>
+              <p>Некоторый репрезентативный заполнитель для первого слайда.</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="./img/header-bg.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Метка второго слайда</h5>
+              <p>Некоторый репрезентативный заполнитель для второго слайда.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./img/header-bg.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Метка третьего слайда</h5>
+              <p>Некоторый репрезентативный заполнитель для третьего слайда.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
+      </div>
+          
+      </div>
+  </header>
+  <main>
+    <div class="sidebar">
+      <button id="sidebar-toggle">Filter</button>
+      <p>Лучшие ароматы от Perfumery для вас</p>
+      <select id="filter" onchange="filterItems()">
+        <option value="all">Все</option>
+        <option value="category1">chanel</option>
+        <option value="category2">givenchy</option>
+        <option value="category3">Sauvage</option>
+      </select>
+
+      <div class="aside-contact-info">
+          <ul>
+              <li><img src="./img/clock-solid.svg" alt="">  9:00 - 19:00</li>
+              <li><img src="./img/envelope-solid.svg" alt="">articstem@mail.ru</li>
+              <li><img src="./img/phone-solid.svg" alt="">  93-106-10-49</li>
+              <li><img src="./img/house-solid.svg" alt="">  Feruza street</li>
+          </ul>
+      </div>
+    </div>
+    <div id="cartPopup" class="popup">
+      <h2>Корзина покупок</h2>
+      <div id="cart-items">
+          <h2>Товары в корзине:</h2>
+          <ul id="cart-list">
+
+          </ul>
+        </div>
+    
+
+      <button class="bagbtn" onclick="closePopup()">Закрыть</button>
+      <button class="bagbtn">Оплатить</button>
+  </div>
+  <style>
+    .section-items{
+      max-width: 1000px;
+    }
+    .section-item{
+      margin-left: 30px;
+    }
+    
+    </style>
+
+  <div id="popupOverlay" class="popup-overlay"></div>
+    <div class="main container">
+    <section class="section-items">
+        <div class=" section-item filterable" data-category="category1">
+          <div class="card-body card-bodyer ">
+            <img class="sell-item"  src="./img/pngwing.com (1).png" alt="">
+            <img src="./img/item-5.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title product">Bleu de chanel</h5>
+            <p id="loremFour" class="card-text ">Нежные ноты цветов, смешанные с элегантными аккордами древесины, раскрываются во волшебном парфюме, оставляя след притягательности и роскоши.</p>
+            <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 150.90)"><del>200</del>   150.90$</button>
+          </div>
+        </div>
+        <div class=" section-item filterable " data-category="category1">
+          <div class="card-body card-bodyer">
+            <img class="sell-iteme"  src="./img/pngwing.com (1).png" alt="">
+            <img class="new-item" src="./img/the-beginning-of-something-new.png">
+            <img src="./img/item-4.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Bleu de chanel</h5>
+            <p id="loremThree" class="card-text">Этот парфюм - искусное сочетание глубоких нот и нежных аккордов, пробуждающее чувственность и оставляющее сладкий след элегантности.</p>
+            <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 140)"><del>300</del>   140$</button>
+          </div>
+        </div>
+        <div class=" section-item filterable" data-category="category1">                
+          <div class="card-body card-bodyer card-body-problem">
+            <img class="sell-item"  src="./img/pngwing.com (1).png" alt="">
+            <img src="./img/item-1.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title ">Lorem parfum</h5>
+            <p id="loremOne" class="card-text">Этот парфюм - искусство, которое окутывает своими нотами, пробуждает чувства и магически преображает обыденностьи превращения моментов в воспоминания.</p>
+            <button class="btn btn-primary price" onclick="addToCart('Lorem parfum', 450)"><del>500.90</del>  450$</button>
+          </div>
+        </div>
+    </section>
+    </div>
+  </main>
+  <footer class="footer">
+      <div class="container footer-content">
+            <div id="chat-container">
+              <div id="chat-log"></div>
+              <input type="text" id="user-input" cplaceholder="Введите сообщение...">
+              <button id=chat-button onclick="sendMessage()" >Send</button>
+            </div>
+          <div class="footer-list">
+            <ul>
+              <li><a href="bag.html"  id="basket">Корзина</a></li>
+              <li><a href="index.html" id="main">Главная</a></li>
+              <li><a href="menu.html" id="menu">Меню</a></li>
+              <li><a href="new.html" id="aboutUs">Новое</a></li>
+              <li><a href="sale.html" id="contacts">Старое</a></li>
+              <li><a href="tel:+998931061049">+998-93-106-10-49</a></li>
+            </ul>           
+      </div>
+  </footer>
+  <script src="js/bag.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

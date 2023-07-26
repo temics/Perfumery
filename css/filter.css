@@ -1,0 +1,7 @@
+.filterable {
+  display: block;
+}
+
+.filterable[style*="none"] {
+  display: none;
+}
