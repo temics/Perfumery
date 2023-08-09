@@ -25,7 +25,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html" id="Main">Главная</a>
+                    <a class="nav-link" aria-current="page" href="index.html" id="Main">Главная</a>
                   </li>
                   <li class="nav-item">
                     <button  class="dif-link nav-link" id="Basket"  onclick="showPopup()">Корзина</button>
@@ -123,8 +123,11 @@
         </div>
     
 
-      <button class="bagbtn" onclick="closePopup()">Закрыть</button>
-      <button class="bagbtn">Оплатить</button>
+        <div>
+          <button class="bagbtn" onclick="closePopup()">Закрыть</button>
+          <a href="payment.html" class="bagbtn">Оплатить</a>
+  
+        </div>
   </div>
   <style>
     .section-items{
@@ -163,7 +166,7 @@
             <img class="sell-item"  src="./img/pngwing.com (1).png" alt="">
             <img src="./img/item-1.jpg" class="card-img-top" alt="...">
             <h5 class="card-title ">Lorem parfum</h5>
-            <p id="loremOne" class="card-text">Этот парфюм - искусство, которое окутывает своими нотами, пробуждает чувства и магически преображает обыденностьи превращения моментов в воспоминания.</p>
+            <p id="loremOne" class="card-text">Этот парфюм - искусство, которое окутывает своими нотами, пробуждает чувства и магически преображает обыденностьи превращения моментов.</p>
             <button class="btn btn-primary price" onclick="addToCart('Lorem parfum', 450)"><del>500.90</del>  450$</button>
           </div>
         </div>

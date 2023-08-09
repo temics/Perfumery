@@ -28,7 +28,95 @@
         flex-wrap: wrap;
     }
 }
+@media(max-width:1242px){
+    #language-buttons button{
+        margin-bottom: 5px;
+        width: 83.11px;
+    }
+}
+@media (max-width:1130px) {
+    .card-body {
+        position: relative !important;
+        height: 424px;
+        max-width: 200px;
+    }
+    .section-item {
+        background: #FFFFFF;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 200px;
+        margin: 20px;
+        height: 424px;
+    }
+}
+@media (max-width:1190px) {
+    .section-news img,
+    .section-news div, 
+    .section-news{
+       display: none;
+       background-color: #e5e5e5;
+    }
+    .main {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        align-items: center;
+        flex-direction: column;
+        align-content: center;
+    }
+    
+}
 
+@media (max-width:991px) {
+    .navbar-collapse{
+        background-color: #282436e0;
+        z-index: 100;
+        border-radius: 10px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 300px;
+        margin-top: 20px;
+    }
+    .header-bg {
+        height: 376px;
+    }
+    .card-body-problem{
+
+        display: none;
+    }
+}
+@media(max-width: 750px) {
+    .card-body{
+        max-width: 150px;
+        height: 350px;
+    }
+    .section-items button,
+    .section-items p {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 10px;
+    }
+    .section-item{
+        height: 350px;
+
+    }
+    
+
+
+
+}
+@media(max-width: 600px) {
+    .card-body-problemo{
+        display: none;
+
+    }
+}
 @media(max-width: 650px) {
     .footer-content {
         flex-direction: column;
@@ -63,6 +151,26 @@
     }
     
 }
+@media (max-width:410px){
+    .section-items {
+        max-height: 690px;
+        max-width: 600px;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-wrap: nowrap;
+        margin-top: 100px;
+        flex-direction: column;
+    }
+    .header-bg {
+        height: 276px;
+    }
+    header {
+        margin-bottom: -200px;
+    }
+
+    
+}
 @media screen and (min-width: 1500px) {
     .nav-list {
       position: initial;
@@ -83,3 +191,10 @@
       display: none;
     }
   }
+  @media  (max-width: 991px) {
+    header{
+        margin-bottom: 0px;
+    }
+
+  }
+

@@ -106,6 +106,7 @@ header {
     align-items: center;
     max-width: 290;
     margin-bottom: 20px;
+    height: 324px;
 }
 .main {
     display: flex;
@@ -286,6 +287,7 @@ button {
 .nav-item{
     font-size: 5px !important;
     text-align: center;
+    margin: auto;
 }
 #chat-container {
     background-color: #cecaca;
@@ -298,6 +300,7 @@ button {
     flex-direction: column;
     justify-content: flex-end;
     z-index: 1;
+    margin-bottom: 30px;
 }
   
 #chat-log {
@@ -368,6 +371,7 @@ button {
 }
 .card-body {
     position: relative !important;
+    height: 324px;
 }
 .sell-iteme {
     position: absolute;
@@ -438,6 +442,9 @@ font-size: 18;
 #filter{
     margin-top: 300px;
 }
+.nav-link{
+    font-size: 24px;
+}
 .nav-link img{
     max-width:20px ;
     max-height:20px ;
@@ -481,4 +488,19 @@ font-size: 18;
     color:#000000;
     margin-bottom: 55px;
     text-align: justify;
+}
+.header-bg{
+height: 676px;
+}
+.baner-1{
+    background: url(../img/ContestBannerDesk-2.webp);
+}
+.baner-2{
+    background: url(../img/ContestBannerDesk.webp);
+}
+.banar img{
+    
+        max-width: 1000;
+        margin-top: 50;
+    
 }
