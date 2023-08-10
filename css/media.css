@@ -166,10 +166,19 @@
         height: 276px;
     }
     header {
-        margin-bottom: -200px;
+        height: 365px !important;
     }
 
     
+}
+@media (max-width:640px){
+    .popup.show{
+        width: 300px !important;
+    }
+    .show{
+        width: 300px;
+    }
+
 }
 @media screen and (min-width: 1500px) {
     .nav-list {

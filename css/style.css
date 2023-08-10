@@ -248,9 +248,9 @@ button {
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
-    margin-left: 30px;
+    margin-left: 55px;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 30px;
 }
   
 .nav-list {
@@ -407,7 +407,7 @@ button {
   #sidebar-toggle {
     position: absolute;
     top: 20px;
-    right: -100px;
+    right: -55px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -500,7 +500,7 @@ height: 676px;
 }
 .banar img{
     
-        max-width: 1000;
+        max-width: 100%;
         margin-top: 50;
     
 }
