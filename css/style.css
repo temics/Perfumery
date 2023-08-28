@@ -798,3 +798,41 @@ input#search {
 .filter input{
     max-width: 200px;
 }
+.baner-plate{
+
+
+
+}
+.baner-plate-items{
+    width: 30%;
+    background-color: #ffffff;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15px;
+
+}
+.baner-plate-items-1{
+    background: url(../img/item-12.jpg) no-repeat;
+    background-size:100%;
+    opacity: .7;
+
+}
+.baner-plate-items-2{
+    background: url(../img/item-13.jpg) no-repeat;
+    background-size:100%;
+    opacity: .7;
+
+}
+.baner-plate-items-3{
+    background: url(../img/item-1.jpg) no-repeat;
+    background-size:100%;
+    opacity: .7;
+
+}
+.baner-plate-items div a {
+    text-decoration: none;
+
+}
