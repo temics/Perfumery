@@ -14,6 +14,26 @@
 </head>
 <body>
   <header>
+    <div class="header-nav-top">
+      <div class="header-nav-top-left">      
+        <i class="fa-solid fa-truck-droplet nav-top-item"></i>
+        <p class="nav-top-item">Free delivery</p>
+        <div class="widget nav-top-item"></div>
+        <i class="fa-solid fa-earth-americas nav-top-item"></i>
+        <p class="nav-top-item">Return politics</p>
+        <div class="widget nav-top-item"></div>
+        <i class="fa-solid fa-location-dot nav-top-item"></i>
+        <p class="nav-top-item">You can find us there</p>
+        <i class="fa-brands fa-facebook nav-top-item"></i>
+        <i class="fa-brands fa-twitter nav-top-item"></i>
+        <i class="fa-brands fa-pinterest nav-top-item"></i>
+        <i class="fa-brands fa-instagram nav-top-item"></i>
+
+      </div>
+      <div class="header-nav-top-right">
+        <i class="fa-regular fa-circle-user nav-top-item"></i> 
+      </div>
+    </div>
       <div class="header-nav">
           <nav class="navbar navbar-expand-lg navbar-dark w-100">
             <div class="container-fluid">
@@ -21,8 +41,8 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-around mb-2 mb-lg-0">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.html" id="Main">Главная</a>
                   </li>
@@ -39,19 +59,18 @@
                     </ul>
                   </li>
                 </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search by the words">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <div id="language-buttons">
-                  <button onclick="changeLanguage('en')">English</button>
-                  <button onclick="changeLanguage('ru')">Русский</button>
-                </div>
+              </div>
+              <div id="like-buttons">
+                <div class="btn btn_red dif-link nav-link like-button" id="Basket"  onclick="showPopup()"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="btn btn_red like-button"><i class="fa-solid fa-earth-americas"></i></div>
               </div>
             </div>
           </nav>
       </div>
-      <div id="carouselExampleDark" class="carousel carousel-dark slide w-100" data-bs-ride="carousel" >
+      <div class="header-nav-bottom">
+
+      </div>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide w-100" data-bs-ride="carousel" >
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -90,23 +109,6 @@
         </button>
   </header>
   <main>
-    <div id="cartPopup" class="popup">
-      <h2>Корзина покупок</h2>
-      <div id="cart-items">
-          <h2>Товары в корзине:</h2>
-          <ul id="cart-list">
-
-          </ul>
-        </div>
-    
-
-        <div>
-          <button class="bagbtn" onclick="closePopup()">Закрыть</button>
-          <a href="payment.html" class="bagbtn">Оплатить</a>
-  
-        </div>
-  </div>
-
   </div>
   <div class="baner-plate">
     <div class="banar"><img src="./img/ContestBannerDesk-2.webp" alt=""><a href="" class="btn">Подребнее</a></div>

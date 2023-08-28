@@ -14,6 +14,20 @@
 </head>
 <body>
   <header>
+    <div class="header-nav-top">
+      <div class="header-nav-top-left">      
+        <i class="fa-solid fa-truck-droplet nav-top-item"></i>
+        <p class="nav-top-item">Free delivery</p>
+        <div class="widget nav-top-item"></div>
+        <i class="fa-solid fa-earth-americas nav-top-item"></i>
+        <p class="nav-top-item">Return politics</p>
+        <div class="widget nav-top-item"></div>
+
+      </div>
+      <div class="header-nav-top-right">
+        <i class="fa-regular fa-circle-user nav-top-item"></i> 
+      </div>
+    </div>
       <div class="header-nav">
           <nav class="navbar navbar-expand-lg navbar-dark w-100">
             <div class="container-fluid">
@@ -39,17 +53,24 @@
                     </ul>
                   </li>
                 </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search by the words">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                <div id="language-buttons">
-                  <button onclick="changeLanguage('en')">English</button>
-                  <button onclick="changeLanguage('ru')">Русский</button>
-                </div>
+              </div>
+              <div id="like-buttons">
+                <div class="btn btn_red dif-link nav-link like-button" id="Basket"  onclick="showPopup()"><i class="fa-solid fa-cart-shopping"></i></div>
+                <div class="btn btn_red like-button"><i class="fa-solid fa-earth-americas"></i></div>
               </div>
             </div>
           </nav>
+      </div>
+      <div class="header-nav-bottom">
+        <div class="container left-container d-none">
+          <input id="search" type="text" placeholder="Type some text">
+          <ul class="drop"></ul>
+        </div>
+        <div class="filter">
+
+        </div>
+      
+
       </div>
       <div id="carouselExampleDark" class="carousel carousel-dark slide w-100" data-bs-ride="carousel" >
         <div class="carousel-indicators">
@@ -94,15 +115,34 @@
   </header>
   <main>
     <div class="sidebar">
-      <button id="sidebar-toggle">Filter</button>
+      <button id="sidebar-toggle"><i class="fa-solid fa-sliders fa-2xl"></i></button>
       <p>Лучшие ароматы от Perfumery для вас</p>
-      <select id="filter" onchange="filterItems()">
-        <option value="all">Все</option>
-        <option value="category1">chanel</option>
-        <option value="category2">givenchy</option>
-        <option value="category3">Sauvage</option>
-      </select>
-
+      <div class="filter">
+        <h3 class="">Фильтр</h3>
+        <label for="sex" class="filter-items">Категория :</label>
+        <select id="sex" class="filter-items">
+          <option value="">Все</option>
+          <option value="male">Мужские</option>
+          <option value="female">Женские</option>
+        </select>
+      
+        <label class="filter-items" for="price">Цена:</label>
+        <input class="filter-items" type="number" id="price" min="0" placeholder="Цена до - ... $">
+        <label for="category" class="filter-items">Бренд :</label>
+        <select id="category" class="filter-items">
+          <option value="">Все</option>
+          <option value="category1">Chanel</option>
+          <option value="category2">Dior</option>
+          <option value="category3">Gucci</option>
+          <option value="category4">Calvin Klein</option>
+          <option value="category5">Dolce & Gabbana</option>
+        </select>
+        
+      
+        
+        <button class="filter-items" id="filterButton">Применить фильтр</button>
+      </div>
+    
       <div class="aside-contact-info">
           <ul>
               <li><img src="./img/clock-solid.svg" alt="">  9:00 - 19:00</li>
@@ -131,97 +171,177 @@
   </div>
 
   <div id="popupOverlay" class="popup-overlay"></div>
-    <div class="main container">
-      <section class="section-news filterable" data-category="category1">
-        <img src="./img/main-news.jpg" class="card-img-top" alt="...">
-        <div class="card-body card-bodyest">
-          <h5 class="card-title">Sauvage : eau de parfum</h5>
-          <p id="loremFive" class="card-text">Этот парфюм - это искусство, пленяющее чувства и переносящее нас в мир восхитительных ароматов. Каждая капля скрывает в себе историю, эмоции и индивидуальность. С момента его появления в воздухе, он обволакивает нас магией, подчеркивает нашу уникальность и разнообразие. Он становится нашим знаком распознавания, помогая нам выразить самое важное в нашей жизни - настроение, стиль и личность. Парфюм – это драгоценность, делающая нашу жизнь более яркой и незабываемой.</p>
-          <button class="btn btn-primary price" onclick="addToCart('Sauvage : eau de parfum', 300)">300$</button>
-        </div>
-      </section>
-    <section class="section-items">
-        <div class=" section-item filterable" data-category="category1">
-          <div class="card-body card-bodyer ">
-            <img class="sell-item"  src="./img/pngwing.com (1).png" alt="">
-            <img src="./img/item-5.jpg" class="card-img-top" alt="...">
-            <h5 class="card-title product">Bleu de chanel</h5>
-            <p id="loremFour" class="card-text ">Нежные ноты цветов, смешанные с элегантными аккордами древесины, раскрываются во волшебном парфюме, оставляя след притягательности и роскоши.</p>
-            <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 150.90)"><del>200</del>   150.90$</button>
+    <div class="main container items">
+          <div class=" section-item filterable item" data-category="category4" data-price="155" data-sex="male">
+            <div class="card-body card-bodyer">
+              <div class="d-flex">
+                <img src="./img/item-5.jpg" class="card-img-top" alt="...">
+                <h5 class="card-title">Bleu de chanel</h5>
+              </div>
+              <p id="loremFour" class="card-text">Нежные ноты цветов, смешанные с элегантными аккордами древесины, раскрываются во волшебном парфюме, оставляя след притягательности и роскоши.</p>
+              <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 155)"><p class="card-button"><del>200</del>   155$</p><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
           </div>
-        </div>
-        <div class=" section-item filterable " data-category="category1">
+          <div class=" section-item filterable item" data-category="category5" data-price="100" data-sex="female">
+            <div class="card-body card-bodyer ">
+              <div class="d-flex">
+                <img src="./img/item-4.jpg" class="card-img-top" alt="...">
+                <h5 class="card-title">Bleu de chanel</h5>
+              </div>
+              <p id="loremThree" class="card-text">Этот парфюм - искусное сочетание глубоких нот и нежных аккордов, пробуждающее чувственность и оставляющее сладкий след элегантности.</p>
+              <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 100)"><p class="card-button"><del>200</del>   100$</p><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+          <div class=" section-item filterable item" data-category="category2" data-price="350" data-sex="male">
+            <div class="card-body card-bodyer card-body-problemo">
+              <img class="new-item" src="./img/item-new.png">
+              <div class="d-flex">
+                <img src="./img/item-2.jpg" class="card-img-top" alt="...">
+                <h5 class="card-title">Gantleman givenchy</h5>
+              </div>
+              <p id="loremTwo" class="card-text">Парфюм - это неповторимая эссенция, гармония запахов, созданная для олицетворения нашей индивидуальности и превращения моментов.</p>
+              <button class="btn btn-primary price" onclick="addToCart('Gantleman givenchy', 350)"><p class="card-button"><del>200</del>   350$</p><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+          <div class=" section-item filterable item" data-category="category3" data-price="250" data-sex="male">                
+            <div class="card-body card-bodyer card-body-problem">
+              <div class="d-flex">
+                <img src="./img/item-1.jpg" class="card-img-top" alt="...">
+                <h5 class="card-title">Lorem parfum</h5>
+              </div>
+              <p id="loremOne" class="card-text">Этот парфюм - искусство, которое окутывает своими нотами, пробуждает чувства и магически преображает обыденностьи превращения моментов.</p>
+              <button class="btn btn-primary price" onclick="addToCart('Lorem parfum', 250)"><p class="card-button"><del>200</del>   250$</p><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+          <div class=" section-item filterable item" data-category="category1" data-price="160" data-sex="male">
+            <div class="card-body card-bodyer ">
+              <img class="sell-item"  src="./img/item-sale.png" alt="">
+              <div class="d-flex">
+                <img src="./img/item-5.jpg" class="card-img-top" alt="...">
+                <h5 class="card-title product">Bleu de chanel</h5>
+              </div>
+              <p id="loremFour" class="card-text ">Нежные ноты цветов, смешанные с элегантными аккордами древесины, раскрываются во волшебном парфюме, оставляя след притягательности и роскоши.</p>
+              <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 150.90)"><p class="card-button"><del>200</del>   150.90$</p><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+          <div class=" section-item filterable item" data-category="category1" data-price="140" data-sex="male">
+            <div class="card-body card-bodyer">
+              <img class="new-item" src="./img/item-new.png">
+              <div class="d-flex">            
+                <img src="./img/item-4.jpg" class="card-img-top" alt="...">
+                <h5 class="card-title">Bleu de chanel</h5>
+              </div>
+              <p id="loremThree" class="card-text">Этот парфюм - искусное сочетание глубоких нот и нежных аккордов, пробуждающее чувственность и оставляющее сладкий след элегантности.</p>
+              <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 140)"><p class="card-button"><del>200</del>   140$</p><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+          <div class=" section-item filterable item" data-category="category1" data-price="159" data-sex="male">
+            <div class="card-body card-bodyer card-body-problemo">
+              <img class="new-item" src="./img/item-new.png">
+              <div class="d-flex">
+                <img src="./img/item-2.jpg" class="card-img-top" alt="...">
+                <h5 class="card-title price">Gantleman givenchy</h5>
+              </div>
+              <p id="loremTwo" class="card-text">Парфюм - это неповторимая эссенция, гармония запахов, созданная для олицетворения нашей индивидуальности и превращения моментов.</p>
+              <button class="btn btn-primary price" onclick="addToCart('Gantleman givenchy', 159)"><p class="card-button"><del>200</del>   159$</p><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+          <div class=" section-item filterable item" data-category="category5" data-price="450" data-sex="female">                
+            <div class="card-body card-bodyer card-body-problem">
+              <img class="sell-item"  src="./img/item-sale.png" alt="">
+              <div class="d-flex">
+                <img src="./img/item-6.jpg" class="card-img-top" alt="...">
+                <h5 class="card-title ">Dolce & Gabbana</h5>
+              </div>
+              <p id="loremOne" class="card-text">Этот парфюм - искусство, которое окутывает своими нотами, пробуждает чувства и магически преображает обыденностьи превращения моментов.</p>
+              <button class="btn btn-primary price" onclick="addToCart('Lorem parfum', 450)"><p class="card-button"><del>200</del>   450$</p><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        <div class=" section-item filterable item" data-category="category2" data-price="155" data-sex="male">
           <div class="card-body card-bodyer">
-            <img class="sell-iteme"  src="./img/pngwing.com (1).png" alt="">
-            <img class="new-item" src="./img/the-beginning-of-something-new.png">
-            <img src="./img/item-4.jpg" class="card-img-top" alt="...">
-            <h5 class="card-title">Bleu de chanel</h5>
+            <div class="d-flex">
+              <img src="./img/item-7.jpg" class="card-img-top" alt="...">
+              <h5 class="card-title">Sauvage: Dior</h5>
+            </div>
+            <p id="loremFour" class="card-text">Нежные ноты цветов, смешанные с элегантными аккордами древесины, раскрываются во волшебном парфюме, оставляя след притягательности и роскоши.</p>
+            <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 155)"><p class="card-button"><del>200</del>   155$</p><i class="fa-solid fa-cart-plus"></i></button>
+          </div>
+        </div>
+        <div class=" section-item filterable item" data-category="category5" data-price="100" data-sex="female">
+          <div class="card-body card-bodyer ">
+            <div class="d-flex">
+              <img src="./img/item-8.jpg" class="card-img-top" alt="...">
+              <h5 class="card-title">Dolce & Gabbana</h5>
+            </div>
             <p id="loremThree" class="card-text">Этот парфюм - искусное сочетание глубоких нот и нежных аккордов, пробуждающее чувственность и оставляющее сладкий след элегантности.</p>
-            <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 140)"><del>300</del>   140$</button>
+            <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 100)"><p class="card-button"><del>200</del>   100$</p><i class="fa-solid fa-cart-plus"></i></button>
           </div>
         </div>
-        <div class=" section-item filterable" data-category="category1">
+        <div class=" section-item filterable item" data-category="category4" data-price="350" data-sex="female">
           <div class="card-body card-bodyer card-body-problemo">
-            <img class="new-item" src="./img/the-beginning-of-something-new.png">
-            <img src="./img/item-2.jpg" class="card-img-top" alt="...">
-            <h5 class="card-title price">Gantleman givenchy</h5>
+            <img class="new-item" src="./img/item-new.png">
+            <div class="d-flex">
+              <img src="./img/item-9.jpg" class="card-img-top" alt="...">
+              <h5 class="card-title">Calvin Klie</h5>
+            </div>
             <p id="loremTwo" class="card-text">Парфюм - это неповторимая эссенция, гармония запахов, созданная для олицетворения нашей индивидуальности и превращения моментов.</p>
-            <button class="btn btn-primary price" onclick="addToCart('Gantleman givenchy', 159)">159$</button>
+            <button class="btn btn-primary price" onclick="addToCart('Gantleman givenchy', 350)"><p class="card-button"><del>200</del>   350$</p><i class="fa-solid fa-cart-plus"></i></button>
           </div>
         </div>
-        <div class=" section-item filterable" data-category="category1">                
+        <div class=" section-item filterable item" data-category="category1" data-price="250" data-sex="female">                
           <div class="card-body card-bodyer card-body-problem">
-            <img class="sell-item"  src="./img/pngwing.com (1).png" alt="">
-            <img src="./img/item-1.jpg" class="card-img-top" alt="...">
-            <h5 class="card-title ">Lorem parfum</h5>
+            <div class="d-flex">
+              <img src="./img/item-10.jpeg" class="card-img-top" alt="...">
+              <h5 class="card-title">Chance Chanel</h5>
+            </div>
             <p id="loremOne" class="card-text">Этот парфюм - искусство, которое окутывает своими нотами, пробуждает чувства и магически преображает обыденностьи превращения моментов.</p>
-            <button class="btn btn-primary price" onclick="addToCart('Lorem parfum', 450)"><del>500.90</del>  450$</button>
+            <button class="btn btn-primary price" onclick="addToCart('Lorem parfum', 250)"><p class="card-button"><del>200</del>   250$</p><i class="fa-solid fa-cart-plus"></i></button>
           </div>
         </div>
-    </section>
-  <section class="section-items">
-      <div class=" section-item filterable" data-category="category1">
+      <div class=" section-item filterable item" data-category="category4" data-price="155" data-sex="female">
         <div class="card-body card-bodyer">
-          <img src="./img/item-5.jpg" class="card-img-top" alt="...">
-          <h5 class="card-title">Bleu de chanel</h5>
+          <div class="d-flex">
+            <img src="./img/item-11.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Calvin Klain</h5>
+          </div>
           <p id="loremFour" class="card-text">Нежные ноты цветов, смешанные с элегантными аккордами древесины, раскрываются во волшебном парфюме, оставляя след притягательности и роскоши.</p>
-          <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 155)">  155$</button>
+          <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 155)"><p class="card-button"><del>200</del>   155$</p><i class="fa-solid fa-cart-plus"></i></button>
         </div>
       </div>
-      <div class=" section-item filterable" data-category="category1">
+      <div class=" section-item filterable item" data-category="category3" data-price="100" data-sex="female">
         <div class="card-body card-bodyer ">
-          <img src="./img/item-4.jpg" class="card-img-top" alt="...">
-          <h5 class="card-title">Bleu de chanel</h5>
+          <div class="d-flex">
+            <img src="./img/item-12.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Gucci Bamboo</h5>
+          </div>
           <p id="loremThree" class="card-text">Этот парфюм - искусное сочетание глубоких нот и нежных аккордов, пробуждающее чувственность и оставляющее сладкий след элегантности.</p>
-          <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 100)">  100$</button>
+          <button class="btn btn-primary price" onclick="addToCart('Bleu de chanel', 100)"><p class="card-button"><del>200</del>   100$</p><i class="fa-solid fa-cart-plus"></i></button>
         </div>
       </div>
-      <div class=" section-item filterable" data-category="category2">
+      <div class=" section-item filterable item" data-category="category1" data-price="350" data-sex="female">
         <div class="card-body card-bodyer card-body-problemo">
-          <img class="new-item" src="./img/the-beginning-of-something-new.png">
-          <img src="./img/item-2.jpg" class="card-img-top" alt="...">
-          <h5 class="card-title">Gantleman givenchy</h5>
+          <img class="new-item" src="./img/item-new.png">
+          <div class="d-flex">
+            <img src="./img/item-13.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Gabriele Chanel</h5>
+          </div>
           <p id="loremTwo" class="card-text">Парфюм - это неповторимая эссенция, гармония запахов, созданная для олицетворения нашей индивидуальности и превращения моментов.</p>
-          <button class="btn btn-primary price" onclick="addToCart('Gantleman givenchy', 350)">  350$</button>
+          <button class="btn btn-primary price" onclick="addToCart('Gantleman givenchy', 350)"><p class="card-button"><del>200</del>   350$</p><i class="fa-solid fa-cart-plus"></i></button>
         </div>
       </div>
-      <div class=" section-item filterable" data-category="category3">                
+      <div class=" section-item filterable item" data-category="category3" data-price="250" data-sex="male">                
         <div class="card-body card-bodyer card-body-problem">
-          <img src="./img/item-1.jpg" class="card-img-top" alt="...">
-          <h5 class="card-title">Lorem parfum</h5>
+          <div class="d-flex">
+            <img src="./img/item-1.jpg" class="card-img-top" alt="...">
+            <h5 class="card-title">Lorem parfum</h5>
+          </div>
           <p id="loremOne" class="card-text">Этот парфюм - искусство, которое окутывает своими нотами, пробуждает чувства и магически преображает обыденностьи превращения моментов.</p>
-          <button class="btn btn-primary price" onclick="addToCart('Lorem parfum', 250)">  250$</button>
+          <button class="btn btn-primary price" onclick="addToCart('Lorem parfum', 250)"><p class="card-button"><del>200</del>   250$</p><i class="fa-solid fa-cart-plus"></i></button>
         </div>
       </div>
-  </section>
-  <section class="section-news filterable" data-category="category2">
-    <img src="./img/main-news.jpg" class="card-img-top" alt="...">
-    <div class="card-body card-bodyest">
-      <h5 class="card-title">Sauvage : eau de parfum</h5>
-      <p id="loremFive" class="card-text">Этот парфюм - это искусство, пленяющее чувства и переносящее нас в мир восхитительных ароматов. Каждая капля скрывает в себе историю, эмоции и индивидуальность. С момента его появления в воздухе, он обволакивает нас магией, подчеркивает нашу уникальность и разнообразие. Он становится нашим знаком распознавания, помогая нам выразить самое важное в нашей жизни - настроение, стиль и личность. Парфюм – это драгоценность, делающая нашу жизнь более яркой и незабываемой.</p>
-      <button class="btn btn-primary price" onclick="addToCart('Sauvage : eau de parfum', 150)">  150$</button>
-    </div>
-  </section>
+  </div>
+
+ 
     </div>
   </main>
   <footer class="footer">

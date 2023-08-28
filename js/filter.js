@@ -1,18 +1,14 @@
-function filterItems() {
-  // Получаем выбранные значения фильтра
-  var filterValue = document.getElementById("filter").value;
+formEl.addEventListener('input', formHandler)
+document.getElementById("filterButton").addEventListener("click", function() {
+  var category = document.getElementById("category").value;
+  var price = document.getElementById("price").value;
+  var items = document.getElementsByClassName("item");
+  var sex = document.getElementById("sex").value;
   
-  // Получаем все элементы, которые требуется отфильтровать
-  var items = document.getElementsByClassName("filterable");
-  
-  // Проходимся по каждому элементу и скрываем или отображаем его в зависимости от выбранного значения фильтра
   for (var i = 0; i < items.length; i++) {
-    var item = items[i];
-    
-    if (item.getAttribute("data-category") === filterValue || filterValue === "all") {
-      item.style.display = "block";
+    if ((category === "" || items[i].getAttribute("data-category") === category) && (price === "" || parseInt(items[i].getAttribute("data-price")) <= parseInt(price)) && (sex === "" || items[i].getAttribute("data-sex") === sex)) {
+      items[i].style.display = "block";
     } else {
-      item.style.display = "none";
+      items[i].style.display = "none";
     }
-  }
-}
+  }})
